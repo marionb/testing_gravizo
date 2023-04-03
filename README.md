@@ -1,7 +1,6 @@
 # testing_gravizo
 play around and test gravizo UML (https://www.gravizo.com)
 
-
 ![Alt text](https://g.gravizo.com/svg?
   digraph G {
     size ="4,4";
@@ -18,3 +17,36 @@ play around and test gravizo UML (https://www.gravizo.com)
     node [shape=box,style=filled,color=".7 .3 1.0"];
     execute -> compare;
   }
+)
+
+
+------------
+#Seccond image
+
+
+![Alt text](https://g.gravizo.com/svg?
+@startuml;
+actor User;
+participant "First Class" as A;
+participant "Second Class" as B;
+participant "Last Class" as C;
+
+User -> A: DoWork;
+activate A;
+
+A -> B: Create Request;
+activate B;
+
+B -> C: DoWork;
+activate C;
+
+C --> B: WorkDone;
+destroy C;
+
+B --> A: Request Created;
+deactivate B;
+
+A --> User: Done;
+deactivate A;
+@enduml
+)
